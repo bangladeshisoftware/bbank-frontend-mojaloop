@@ -263,15 +263,7 @@ function DashboardLayout({ children }) {
             {menuItems.find((item) => item.path === location.pathname)?.text ||
               'Dashboard'}
           </Typography>
-          <Typography
-            sx={{ flexGrow: 1, fontWeight: 500 }}
-            className='text-gray-500 text-xl md:block hidden'
-            variant='body2'
-            color='text.secondary'
-          >
-            Welcome back!{' '}
-            <span className='text-[#ff4900]'>{profile?.full_name}</span>
-          </Typography>
+      
           <Box>
             <Typography
               variant='caption'

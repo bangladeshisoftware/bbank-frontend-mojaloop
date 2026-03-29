@@ -55,7 +55,7 @@ const TYPE_COLORS = {
   P2P: '#05569f',
   INSTANT: '#7c3aed',
   BULK: '#0891b2',
-  NBPS: '#059669',
+  NPSB: '#059669',
   RTGS: '#d97706',
   BEFTN: '#dc2626',
 };
@@ -64,7 +64,7 @@ const SUMMARY_ICONS = {
   P2P: '👤',
   INSTANT: '⚡',
   BULK: '📦',
-  NBPS: '🏦',
+  NPSB: '🏦',
   RTGS: '🏛️',
   BEFTN: '🔄',
 };
@@ -454,8 +454,8 @@ function Transactions() {
   const hasActiveFilters =
     direction || txType || status || merchantId || dateFrom || dateTo;
 
-  // ── Summary cards to show (P2P, NBPS, RTGS, BEFTN) ───────
-  const CARD_TYPES = ['P2P', 'INSTANT', 'NBPS', 'RTGS', 'BEFTN',];
+  // ── Summary cards to show (P2P, NPSB, RTGS, BEFTN) ───────
+  const CARD_TYPES = ['P2P', 'INSTANT', 'NPSB', 'RTGS', 'BEFTN',];
 
   return (
     <Box sx={{ p: { xs: 2, md: 3 } }}>
@@ -661,7 +661,7 @@ function Transactions() {
               onChange={(e) => setTxType(e.target.value)}
             >
               <MenuItem value=''>All Types</MenuItem>
-              {['P2P', 'INSTANT', 'BULK', 'NBPS', 'RTGS', 'BEFTN'].map((t) => (
+              {['P2P', 'INSTANT', 'BULK', 'NPSB', 'RTGS', 'BEFTN'].map((t) => (
                 <MenuItem key={t} value={t}>
                   <Box
                     sx={{ display: 'flex', alignItems: 'center', gap: 0.75 }}

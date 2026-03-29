@@ -87,7 +87,7 @@ const TYPE_COLOR = {
   P2P: '#05569f',
   INSTANT: '#7c3aed',
   BULK: '#0891b2',
-  NBPS: '#059669',
+  NPSB: '#059669',
   RTGS: '#d97706',
   BEFTN: '#dc2626',
 };

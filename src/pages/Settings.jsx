@@ -88,8 +88,6 @@ function Settings() {
 
   return (
     <div className='py-3 px-5 mt-3 ml-4'>
-      <h2>Settings</h2>
-
       <div className='max-w-xl mx-auto md:bg-[#fefefe] md:p-4 rounded-md flex flex-col gap-8 mt-4'>
 
         <Box>

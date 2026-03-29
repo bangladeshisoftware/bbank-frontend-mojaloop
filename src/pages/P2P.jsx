@@ -505,7 +505,7 @@ const P2P = () => {
                       >
                         <MenuItem value='P2P'>P2P Transfer</MenuItem>
                         <MenuItem value='INSTANT'>Instant Payment</MenuItem>
-                        <MenuItem value='NBPS'>NBPS</MenuItem>
+                        <MenuItem value='NPSB'>NPSB</MenuItem>
                         <MenuItem value='RTGS'>RTGS</MenuItem>
                         <MenuItem value='BEFTN'>BEFTN</MenuItem>
                       </Select>
