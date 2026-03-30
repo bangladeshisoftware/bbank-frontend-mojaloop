@@ -30,6 +30,9 @@ const P2P = () => {
     putQuoteCallbackError,
     putTransferCallback,
     putTransferCallbackError,
+
+    alsOracleVerifyCallback,
+    alsOracleVerifyErrorCallback,
   } = useSocket();
   const { getProfile } = useAuth();
   const [amount, setAmount] = useState('');
@@ -52,7 +55,61 @@ const P2P = () => {
   const [selectedUser, setSelectUser] = useState('');
   const [amountLimit, setAmountLimit] = useState('');
 
+  // step 1 - init
   const handleSearch = async () => {
+    if (!selectedUser) {
+      return swal('Warning!', 'Please select a sender merchant!', 'warning');
+    }
+    if (!idType || !receiverNumber) {
+      swal('Warning!', 'Select ID Type and Enter Receiver Number!', 'warning');
+      return;
+    }
+    setLoading(true);
+    // if confirm in step 1, then call second function, because that already in selected.
+    try {
+      const res = await fetch(
+        `${
+          import.meta.env.VITE_APP_SERVER
+        }/api/oracle-verify/${idType}/${receiverNumber}`,
+        {
+          method: 'GET',
+          headers: { 'Content-Type': 'application/json' },
+        },
+      );
+      if (res.ok) {
+        return;
+      } else {
+        const message = 'Something went wrong!';
+        swal('Failed!', message, 'error');
+        setSearchData({});
+        setReceiverData({});
+        setStatus('');
+        setSearchData({});
+        setAlsVerifyErrorData('');
+        setLoading(false);
+      }
+
+      console.log(data);
+    } catch (error) {
+      setLoading(false);
+      console.error(error);
+    }
+  };
+  // waite for callback - oracle, error
+  useEffect(() => {
+    if (alsOracleVerifyCallback && selectedUser && idType && receiverNumber) {
+      console.log('full data: ', alsOracleVerifyCallback);
+      console.log('required data: ', alsOracleVerifyCallback?.body?.fspId);
+      SearchByParties(alsOracleVerifyCallback?.body?.fspId);
+    } else {
+      console.log('not matched the condition..');
+    }
+  }, [alsOracleVerifyCallback, alsOracleVerifyErrorCallback]);
+  // transfer final search stage.
+
+  const SearchByParties = async (recv_dfsp) => {
+    if (!recv_dfsp) return;
+
     if (!selectedUser) {
       return swal('Warning!', 'Please select a sender merchant!', 'warning');
     }
@@ -66,7 +123,7 @@ const P2P = () => {
       const res = await fetch(
         `${
           import.meta.env.VITE_APP_SERVER
-        }/api/verify-parties/${idType}/${receiverNumber}`,
+        }/api/verify-parties/${recv_dfsp}/${idType}/${receiverNumber}`,
         {
           method: 'GET',
           headers: { 'Content-Type': 'application/json' },
@@ -233,9 +290,11 @@ const P2P = () => {
       setReceiverData(alsputCallback?.body);
       setLoading(false);
       setStatus('view-search-info');
-    } else if (alsputErrorCallback) {
+    } else if (alsputErrorCallback || alsOracleVerifyErrorCallback) {
       setAlsVerifyErrorData(
-        alsputErrorCallback?.body?.errorInformation?.errorDescription,
+        alsputErrorCallback?.body?.errorInformation?.errorDescription ||
+          alsOracleVerifyErrorCallback?.body?.errorInformation
+            ?.errorDescription,
       );
       setQuoteVerifyErrorData('');
       setSearchData({});
@@ -257,6 +316,7 @@ const P2P = () => {
   }, [
     alsputCallback,
     alsputErrorCallback,
+    alsOracleVerifyErrorCallback,
     putQuoteCallback,
     putQuoteCallbackError,
     putTransferCallback,
@@ -508,12 +568,6 @@ const P2P = () => {
                         <MenuItem value='NPSB'>NPSB</MenuItem>
                         <MenuItem value='RTGS'>RTGS</MenuItem>
                         <MenuItem value='BEFTN'>BEFTN</MenuItem>
-                      </Select>
-                    </FormControl>
-                    <FormControl fullWidth className='mb-2'>
-                      <InputLabel id='dfsp'>Receiver DFSP</InputLabel>
-                      <Select labelId='dfsp' label='Receiver DFSP'>
-                        <MenuItem value='ABank'>A Bank</MenuItem>
                       </Select>
                     </FormControl>
                     <FormControl fullWidth className='mb-2'>

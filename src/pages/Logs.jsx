@@ -10,7 +10,9 @@ import { FcCallback } from 'react-icons/fc';
 function Logs() {
   const {
     alsRegisterSingleCallback,
+    alsOracleVerifyCallback,
     aslRegisterSingleErrorCallback,
+    alsOracleVerifyErrorCallback,
     alsRegisterManyCallback,
     aslRegisterManyErrorCallback,
     alsverifyCallback,
@@ -35,6 +37,11 @@ function Logs() {
 
   const callbacks = [
     {
+      name: 'ALS Oracle Verify',
+      data: alsOracleVerifyCallback,
+      type: 'success',
+    },
+    {
       name: 'ALS Single Registration',
       data: alsRegisterSingleCallback,
       type: 'success',
@@ -42,6 +49,11 @@ function Logs() {
     {
       name: 'ALS Single Registration Error',
       data: aslRegisterSingleErrorCallback,
+      type: 'error',
+    },
+    {
+      name: 'ALS Oracle Verify Error',
+      data: alsOracleVerifyErrorCallback,
       type: 'error',
     },
     {
@@ -230,7 +242,7 @@ function Logs() {
                       </div>
                     )}
                   </div>
-                )
+                ),
             )
           )}
         </div>

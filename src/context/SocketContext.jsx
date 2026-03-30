@@ -10,10 +10,12 @@ export const useSocket = () => useContext(SocketContext);
 
 export const SocketProvider = ({ children }) => {
   const [socket, setSocket] = useState(null);
-  // new
   // ALS
   // ALS # Registration
   const [alsRegisterSingleCallback, setAlsRegisterSingleCallback] =
+    useState(null);
+  const [alsOracleVerifyCallback, setAlsOracleVerifyCallback] = useState(null);
+  const [alsOracleVerifyErrorCallback, setAlsOracleVerifyErrorCallback] =
     useState(null);
   const [aslRegisterSingleErrorCallback, setAlsRegisterSingleErrorCallback] =
     useState(null);
@@ -52,14 +54,25 @@ export const SocketProvider = ({ children }) => {
     setSocket(socketInstance);
 
     // ALS # Registration
+
     socketInstance.on('alsRegisterOneCallback', (data) => {
       console.log('New single ALS Registration callback data:', data);
       setAlsRegisterSingleCallback(data);
+    });
+    // verify
+    socketInstance.on('alsOracleVerifyCallback', (data) => {
+      console.log('New ALS Oracle verify callback data:', data);
+      setAlsOracleVerifyCallback(data);
     });
 
     socketInstance.on('alsRegisterOneErrorCallback', (data) => {
       console.log('New single ALS Error Registration callback data:', data);
       setAlsRegisterSingleErrorCallback(data);
+    });
+    // verify
+    socketInstance.on('alsOracleVerifyErrorCallback', (data) => {
+      console.log('New ALS Oracle verify Error callback data:', data);
+      setAlsOracleVerifyErrorCallback(data);
     });
 
     socketInstance.on('alsRegisterManyCallback', (data) => {
@@ -165,6 +178,8 @@ export const SocketProvider = ({ children }) => {
     setPostTransfersCallback(null);
     setPutTransfersCallback(null);
     setPutTransfersCallbackError(null);
+    setAlsOracleVerifyCallback(null);
+    setAlsOracleVerifyErrorCallback(null);
   }
   return (
     <SocketContext.Provider
@@ -172,7 +187,9 @@ export const SocketProvider = ({ children }) => {
         socket,
         resetState,
         alsRegisterSingleCallback,
+        alsOracleVerifyCallback,
         aslRegisterSingleErrorCallback,
+        alsOracleVerifyErrorCallback,
         alsRegisterManyCallback,
         aslRegisterManyErrorCallback,
         alsverifyCallback,
