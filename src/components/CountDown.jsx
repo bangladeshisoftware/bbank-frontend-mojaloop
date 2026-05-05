@@ -24,7 +24,4 @@ function Countdown({ targetDate, onFinish }) {
   return <div>{time}</div>;
 }
 
-// Usage example:
-// <Countdown targetDate="2025-11-04T14:20:49.578Z" onFinish={() => console.log("Done!")} />
-
 export default Countdown

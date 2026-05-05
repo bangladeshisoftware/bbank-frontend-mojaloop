@@ -1,18 +1,16 @@
 import React, { useState } from 'react'
 import { Box, Typography, TextField, Button } from '@mui/material'
-// import MetaData from '@/components/MetaData'
 import { ImSpinner4 } from "react-icons/im";
 
 const P2P = () => {
   const [amount, setAmount] = useState('')
-  const [senderFsp, setSenderFsp] = useState('payerfsp') // Dynamic sender FSP
+  const [senderFsp, setSenderFsp] = useState('payerfsp')
   const [receiverFsp, setReceiverFsp] = useState('payeefsp')
   const [senderBalance, setSenderBalance] = useState(2000)
   const [receiverBalance, setReceiverBalance] = useState(500)
   const [status, setStatus] = useState('')
   const [loading, setLoading] = useState(false)
   const [processing, setProcessing] = useState(false)
-  // new
   const [number, setNumber] = useState("")
   const [searchData, setSearchData] = useState({})
   const [receiverNumber, setReceiverNumber] = useState("")

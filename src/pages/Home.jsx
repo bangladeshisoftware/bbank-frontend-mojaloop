@@ -45,7 +45,7 @@ import AccountBalanceIcon from '@mui/icons-material/AccountBalance';
 import SwapHorizIcon from '@mui/icons-material/SwapHoriz';
 import { useAuth } from '../context/AuthContext';
 
-// ── helpers ──────────────────────────────────────────────────
+// helpers
 const fmt = (n, d = 2) =>
   Number(n || 0).toLocaleString('en-US', {
     minimumFractionDigits: d,
@@ -92,7 +92,7 @@ const TYPE_COLOR = {
   BEFTN: '#dc2626',
 };
 
-// ── StatusChip ────────────────────────────────────────────────
+// StatusChip
 function StatusChip({ status }) {
   const cfg = STATUS_COLOR[status] || {
     bg: '#f3f4f6',
@@ -118,7 +118,7 @@ function StatusChip({ status }) {
   );
 }
 
-// ── KPI Card ──────────────────────────────────────────────────
+// KPI Card
 function KpiCard({ icon, label, value, sub, accent, change, loading }) {
   const theme = useTheme();
   const isUp =
@@ -208,7 +208,7 @@ function KpiCard({ icon, label, value, sub, accent, change, loading }) {
   );
 }
 
-// ── Main Dashboard ────────────────────────────────────────────
+// Main Dashboard
 export default function Dashboard() {
   const theme = useTheme();
   const { isAdmin, isMerchant } = useAuth();
@@ -243,7 +243,7 @@ export default function Dashboard() {
   const m = data?.this_month || {};
   const cmp = data?.comparison || {};
 
-  // ── fill empty hours 0–23 ─────────────────────────────────
+  // fill empty hours 0–23
   const hourlyFull = Array.from({ length: 24 }, (_, h) => {
     const found = (data?.hourly || []).find((r) => parseInt(r.hour) === h);
     return found
@@ -342,7 +342,7 @@ export default function Dashboard() {
           ))}
       </Grid>
 
-      {/* ── KPI Row 2: Month summary ── */}
+      {/* KPI Row 2: Month summary */}
       <Grid container spacing={2} sx={{ mb: 3 }}>
         {[
           {
@@ -403,7 +403,7 @@ export default function Dashboard() {
           ))}
       </Grid>
 
-      {/* ── Charts Row ── */}
+      {/* Charts Row */}
       <div className='mb-3 md:flex gap-4'>
         {/* Hourly bar */}
         <Grid className='w-full' item xs={3} lg={3}>
@@ -572,7 +572,7 @@ export default function Dashboard() {
         </Grid>
       </div>
 
-      {/* ── 7-Day Trend ── */}
+      {/* 7-Day Trend */}
       <Card
         elevation={0}
         sx={{

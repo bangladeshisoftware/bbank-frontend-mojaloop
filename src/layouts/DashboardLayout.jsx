@@ -327,7 +327,7 @@ function DashboardLayout({ children }) {
           {children || (
             <Box sx={{ textAlign: 'center', py: 8, color: 'text.secondary' }}>
               <Typography variant='h5' gutterBottom>
-                👋 Welcome to{' '}
+                Welcome to{' '}
                 {
                   menuItems.find((item) => item.path === location.pathname)
                     ?.text

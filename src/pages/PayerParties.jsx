@@ -29,7 +29,7 @@ import { ImSpinner4 } from "react-icons/im";
 function PayerParties() {
   const theme = useTheme();
 
-  // --- States ---
+  // States
   const [searchTerm, setSearchTerm] = useState("");
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(10);
@@ -76,7 +76,7 @@ function PayerParties() {
     }
   };
 
-  // --- Filter logic ---
+  // Filter logic
   const filteredParties = parties.filter(
     (p) =>
       p.displayName.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -84,18 +84,18 @@ function PayerParties() {
       p.accountType.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
-  // --- Pagination handlers ---
+  // Pagination handlers
   const handleChangePage = (_, newPage) => setPage(newPage);
   const handleChangeRowsPerPage = (event) => {
     setRowsPerPage(parseInt(event.target.value, 10));
     setPage(0);
   };
 
-  // --- Dialog handlers ---
+  // Dialog handlers
   const handleOpenDialog = () => setOpenAddDialog(true);
   const handleCloseDialog = () => setOpenAddDialog(false);
 
-  // --- Add Party state ---
+  // Add Party state 
   const [newParty, setNewParty] = useState({
     displayName: "",
     firstName: "",

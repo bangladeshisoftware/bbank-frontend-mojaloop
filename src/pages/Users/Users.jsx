@@ -157,7 +157,7 @@ function UserFormDialog({ open, onClose, onSaved, editUser, merchants }) {
     setSaving(true);
     try {
       const body = { ...form };
-      if (isEdit && !body.password) delete body.password; // skip empty pw on edit
+      if (isEdit && !body.password) delete body.password;
 
       const url = isEdit
         ? `${API}/api/auth/users/${editUser.id}`
@@ -717,43 +717,7 @@ export default function Users() {
           </Button>
         </Box>
       </Box>
-      {/* <Box sx={{ display: 'flex', gap: 1.5, mb: 2.5, flexWrap: 'wrap' }}>
-        {[
-          {
-            label: `${total} Total`,
-            bg: alpha('#05569f', 0.08),
-            color: '#05569f',
-          },
-          {
-            label: `${activeCount} Active`,
-            bg: alpha('#059669', 0.08),
-            color: '#059669',
-          },
-          {
-            label: `${inactiveCount} Inactive`,
-            bg: alpha('#dc2626', 0.08),
-            color: '#dc2626',
-          },
-          {
-            label: `${adminCount} Admins`,
-            bg: alpha('#d97706', 0.08),
-            color: '#d97706',
-          },
-        ].map(({ label, bg, color }) => (
-          <Chip
-            key={label}
-            label={label}
-            size='small'
-            sx={{
-              fontWeight: 700,
-              fontSize: 12,
-              bgcolor: bg,
-              color,
-              border: `1px solid ${alpha(color, 0.2)}`,
-            }}
-          />
-        ))}
-      </Box> */}
+     
       <Paper
         elevation={0}
         component='form'
@@ -841,7 +805,7 @@ export default function Users() {
         </Box>
       </Paper>
 
-      {/* ── Table ── */}
+      {/* Table */}
       <TableContainer
         component={Paper}
         elevation={0}
@@ -1139,7 +1103,7 @@ export default function Users() {
         </Table>
       </TableContainer>
 
-      {/* ── Pagination ── */}
+      {/* Pagination */}
       <Box
         sx={{
           display: 'flex',
@@ -1164,7 +1128,7 @@ export default function Users() {
         />
       </Box>
 
-      {/* ── Dialogs ── */}
+      {/* Dialogs */}
       <UserFormDialog
         open={formOpen}
         onClose={() => {

@@ -98,11 +98,7 @@ const P2P = () => {
   // waite for callback - oracle, error
   useEffect(() => {
     if (alsOracleVerifyCallback && selectedUser && idType && receiverNumber) {
-      console.log('full data: ', alsOracleVerifyCallback);
-      console.log('required data: ', alsOracleVerifyCallback?.body?.fspId);
       SearchByParties(alsOracleVerifyCallback?.body?.fspId);
-    } else {
-      console.log('not matched the condition..');
     }
   }, [alsOracleVerifyCallback, alsOracleVerifyErrorCallback]);
   // transfer final search stage.
@@ -325,8 +321,6 @@ const P2P = () => {
   return (
     <div className='bg-gray-100 p-6 md:h-[86.8vh] h-[100%]'>
       <Box className='flex justify-center items-center mt-10'>
-        {/* <MetaData /> */}
-
         <Box className='flex flex-col md:flex-row gap-40 py-5 '>
           {/* Sender Emulator */}
           <Box className='w-[280px] h-[560px] bg-white shadow-2xl rounded-[40px] relative overflow-hidden border-8 border-black flex flex-col justify-between'>

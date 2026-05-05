@@ -316,11 +316,11 @@ function DetailRow({ trx, colSpan }) {
   );
 }
 
-// ─── Main Page ────────────────────────────────────────────────
+// Main Page
 function Transactions() {
   const theme = useTheme();
   const token = localStorage.getItem('dfsp_v2_token');
-  // ── Filter states ─────────────────────────────────────────
+  // Filter states
   const [search, setSearch] = useState('');
   const [direction, setDirection] = useState('');
   const [txType, setTxType] = useState('');
@@ -330,7 +330,7 @@ function Transactions() {
   const [dateTo, setDateTo] = useState('');
   const [showFilters, setShowFilters] = useState(false);
 
-  // ── Table states ──────────────────────────────────────────
+  // Table states
   const [rows, setRows] = useState([]);
   const [pagination, setPagination] = useState({
     total: 0,
@@ -342,11 +342,11 @@ function Transactions() {
   const [loading, setLoading] = useState(false);
   const [expandedId, setExpandedId] = useState(null);
 
-  // ── Summary states ────────────────────────────────────────
+  // Summary states
   const [summary, setSummary] = useState(null);
   const [summaryLoading, setSummaryLoading] = useState(false);
 
-  // ── Fetch transactions ────────────────────────────────────
+  // Fetch transactions
   const fetchTransactions = useCallback(
     async (pageNum = 1, perPage = 10) => {
       setLoading(true);
@@ -385,7 +385,7 @@ function Transactions() {
     [direction, search, txType, status, merchantId, dateFrom, dateTo],
   );
 
-  // ── Fetch summary ─────────────────────────────────────────
+  // Fetch summary
   const fetchSummary = useCallback(async () => {
     setSummaryLoading(true);
     try {
@@ -420,7 +420,7 @@ function Transactions() {
     fetchTransactions(1, rowsPerPage);
   }, [fetchTransactions]);
 
-  // ── Pagination handlers ───────────────────────────────────
+  // Pagination handlers
   const handleChangePage = (_, newPage) => {
     setPage(newPage);
     fetchTransactions(newPage + 1, rowsPerPage);
@@ -433,7 +433,7 @@ function Transactions() {
     fetchTransactions(1, rpp);
   };
 
-  // ── Search submit ─────────────────────────────────────────
+  // Search submit
   const handleSearch = (e) => {
     e.preventDefault();
     setPage(0);
@@ -454,12 +454,12 @@ function Transactions() {
   const hasActiveFilters =
     direction || txType || status || merchantId || dateFrom || dateTo;
 
-  // ── Summary cards to show (P2P, NPSB, RTGS, BEFTN) ───────
+  // Summary cards to show (P2P, NPSB, RTGS, BEFTN)
   const CARD_TYPES = ['P2P', 'INSTANT', 'NPSB', 'RTGS', 'BEFTN',];
 
   return (
     <Box sx={{ p: { xs: 2, md: 3 } }}>
-      {/* ── Summary Cards ── */}
+      {/* Summary Cards */}
       <Box sx={{ mb: 3 }}>
         {summaryLoading ? (
           <LinearProgress sx={{ borderRadius: 1, mb: 1 }} />
@@ -479,7 +479,6 @@ function Transactions() {
                         borderRadius: 2,
                       }}
                     >
-                      {/* <Box sx={{ height: 3, bgcolor: TYPE_COLORS[type] }} /> */}
                       <CardContent sx={{ p: 2, '&:last-child': { pb: 2 } }}>
                         <Typography fontWeight={700} color={TYPE_COLORS[type]}>
                           {type}
@@ -501,7 +500,7 @@ function Transactions() {
         )}
       </Box>
 
-      {/* ── Page Header ── */}
+      {/* Page Header */}
       <Box
         sx={{
           display: 'flex',
@@ -619,7 +618,7 @@ function Transactions() {
         </Box>
       </Box>
 
-      {/* ── Search + Filter Bar ── */}
+      {/* Search and Filter Bar */}
       <Paper
         elevation={0}
         component='form'
@@ -631,7 +630,6 @@ function Transactions() {
           mb: 2,
         }}
       >
-        {/* Always visible: search + status + type */}
         <Box
           sx={{
             display: 'flex',
@@ -764,7 +762,7 @@ function Transactions() {
         </Collapse>
       </Paper>
 
-      {/* ── Transactions Table ── */}
+      {/* Transactions Table */}
       <TableContainer
         component={Paper}
         elevation={0}
@@ -1003,7 +1001,7 @@ function Transactions() {
         </Table>
       </TableContainer>
 
-      {/* ── Pagination ── */}
+      {/* Pagination */}
       <Box
         sx={{
           display: 'flex',

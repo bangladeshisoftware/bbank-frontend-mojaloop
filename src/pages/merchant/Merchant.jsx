@@ -86,21 +86,7 @@ const STATUS_CFG = {
   1: { label: 'Active', color: '#059669', bg: '#dcfce7' },
   0: { label: 'Inactive', color: '#dc2626', bg: '#fee2e2' },
 };
-// const F = ({form, k, label, type = 'text', disabled = false, half = true }) => (
-//   <Grid item xs={12} sm={half ? 6 : 12}>
-//     <TextField
-//       fullWidth
-//       size='small'
-//       label={label}
-//       type={type}
-//       value={form[k]}
-//       onChange={(e) => set(k, e.target.value)}
-//       error={!!errors[k]}
-//       helperText={errors[k]}
-//       disabled={disabled}
-//     />
-//   </Grid>
-// );
+
 const F = ({
   form,
   errors,

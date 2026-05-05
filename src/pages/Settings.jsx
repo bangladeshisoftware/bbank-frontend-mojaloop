@@ -2,7 +2,7 @@ import { Box, Button, TextField, Typography, Divider, Avatar, Chip } from '@mui/
 import React, { useEffect, useState } from 'react';
 import { ImSpinner4 } from 'react-icons/im';
 import swal from 'sweetalert';
-import { useAuth } from '../context/AuthContext'; // adjust path
+import { useAuth } from '../context/AuthContext';
 
 const API   = import.meta.env.VITE_APP_SERVER;
 const TOKEN = () => localStorage.getItem('dfsp_v2_token') || '';
@@ -166,7 +166,7 @@ function Settings() {
 
         <Divider />
 
-        {/* ── Quote Fee (existing) ── */}
+        {/* Quote Fee (existing) */}
         <Box>
           <Typography fontWeight={700} fontSize={14} mb={2}
             sx={{ textTransform: 'uppercase', letterSpacing: 0.8, color: 'text.secondary' }}>

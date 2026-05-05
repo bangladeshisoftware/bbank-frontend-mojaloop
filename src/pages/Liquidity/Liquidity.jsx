@@ -79,7 +79,7 @@ const fmtDate = (d) =>
 const trunc = (s, n = 16) =>
   s && s.length > n ? s.slice(0, n) + '…' : s || '—';
 
-// ── Status badge ──────────────────────────────────────────────
+// Status badge
 function StatusBadge({ status }) {
   const c = STATUS_CFG[status] || {
     label: status,
@@ -344,7 +344,7 @@ export default function Liquidity() {
         >
           <CardContent sx={{ p: 2.5, '&:last-child': { pb: 2.5 } }}>
             <Typography fontWeight={700} fontSize={14} mb={2.5}>
-              💳 Transaction Limits — Today
+              Transaction Limits — Today
             </Typography>
             <Grid container spacing={3} alignItems='center'>
               {lm.single_limit_set && (

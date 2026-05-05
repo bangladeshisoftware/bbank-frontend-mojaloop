@@ -141,7 +141,7 @@ function PM2() {
         {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(formate), // now payerfsp default merchant id is 1
+          body: JSON.stringify(formate),
         },
       );
       if (res.ok) {

@@ -43,7 +43,7 @@ import StorefrontIcon from '@mui/icons-material/Storefront';
 import TuneIcon from '@mui/icons-material/Tune';
 import { ImFileEmpty } from 'react-icons/im';
 
-// ── helpers ───────────────────────────────────────────────────
+// helpers
 const API = import.meta.env.VITE_APP_SERVER;
 const TOKEN = () => localStorage.getItem('dfsp_v2_token') || '';
 const USER = () => {
@@ -95,14 +95,14 @@ export default function ActivityLogs() {
   const user = USER();
   const isAdmin = user?.role === 'ADMIN';
 
-  // ── data ──────────────────────────────────────────────────
+  // data
   const [logs, setLogs] = useState([]);
   const [stats, setStats] = useState(null);
   const [total, setTotal] = useState(0);
   const [loading, setLoading] = useState(true);
   const [statsLoading, setStatsLoading] = useState(true);
 
-  // ── filters ───────────────────────────────────────────────
+  // filters
   const [search, setSearch] = useState('');
   const [roleFilter, setRoleFilter] = useState('');
   const [statusFilter, setStatusFilter] = useState('');
@@ -110,7 +110,7 @@ export default function ActivityLogs() {
   const [dateTo, setDateTo] = useState('');
   const [showFilters, setShowFilters] = useState(false);
 
-  // ── pagination ────────────────────────────────────────────
+  // pagination
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(20);
 
@@ -588,7 +588,7 @@ export default function ActivityLogs() {
         </Table>
       </TableContainer>
 
-      {/* ── Pagination ── */}
+      {/* Pagination */}
       <Box
         sx={{
           display: 'flex',
