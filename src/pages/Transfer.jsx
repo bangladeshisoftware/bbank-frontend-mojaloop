@@ -21,7 +21,7 @@ import { FiLoader } from 'react-icons/fi';
 import SelectUserOption from '../components/SelectUserOption';
 import { useAuth } from '../context/AuthContext';
 
-const P2P = () => {
+const Transfer = () => {
   const {
     resetState,
     alsputCallback,
@@ -680,4 +680,4 @@ const P2P = () => {
   );
 };
 
-export default P2P;
+export default Transfer;

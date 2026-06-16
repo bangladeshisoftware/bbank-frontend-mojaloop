@@ -4,7 +4,7 @@ import { useAuth } from './context/AuthContext';
 import Login from './pages/Auth/Login';
 import OtpVerify from './pages/Auth/OTPVerify';
 import Home from './pages/Home';
-import P2P from './pages/P2P';
+import Transfer from './pages/Transfer';
 import Transactions from './pages/Transactions/Transactions';
 import PM2 from './pages/PM2';
 import Logs from './pages/Logs';
@@ -46,7 +46,7 @@ function AppRoutes() {
             <DashboardLayout>
               <Routes>
                 <Route path='/' element={<Home />} />
-                <Route path='/p2p' element={<P2P />} />
+                <Route path='/transfer' element={<Transfer />} />
                 <Route path='/transactions' element={<Transactions />} />
                 <Route path='/bulk-g2p' element={<PM2 />} />
                 <Route path='/logs' element={<Logs />} />
@@ -58,10 +58,7 @@ function AppRoutes() {
                     </Protected>
                   }
                 />
-                <Route
-                  path='/balance-inquiry'
-                  element={<BalancePage /> }
-                />
+                <Route path='/balance-inquiry' element={<BalancePage />} />
                 <Route
                   path='/liquidity'
                   element={

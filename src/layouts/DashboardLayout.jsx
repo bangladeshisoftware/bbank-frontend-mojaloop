@@ -58,7 +58,7 @@ function DashboardLayout({ children }) {
       text: 'Transfers',
       access: true,
       icon: <MdOutlineSendToMobile />,
-      path: '/p2p',
+      path: '/transfer',
     },
     { text: 'Live Logs', access: true, icon: <MdWorkHistory />, path: '/logs' },
     {
@@ -263,7 +263,7 @@ function DashboardLayout({ children }) {
             {menuItems.find((item) => item.path === location.pathname)?.text ||
               'Dashboard'}
           </Typography>
-      
+
           <Box>
             <Typography
               variant='caption'
