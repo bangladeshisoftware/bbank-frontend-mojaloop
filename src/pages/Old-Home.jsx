@@ -1,3 +1,10 @@
+/**************************************************************************
+ * Copyright © 2026 Bangladeshi Software Ltd. All rights reserved.
+ * Distributed under the license terms specified in this repository.
+ *
+ * ORIGINAL AUTHOR: Muhammad Nasim (Developer)
+ **************************************************************************/
+
 import React from 'react';
 import { Typography, Box, Stack, Link } from '@mui/material';
 import { VscDebugBreakpointData } from 'react-icons/vsc';

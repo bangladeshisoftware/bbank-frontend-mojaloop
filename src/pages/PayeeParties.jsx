@@ -1,3 +1,10 @@
+/**************************************************************************
+ * Copyright © 2026 Bangladeshi Software Ltd. All rights reserved.
+ * Distributed under the license terms specified in this repository.
+ *
+ * ORIGINAL AUTHOR: Muhammad Nasim (Developer)
+ **************************************************************************/
+
 import React, { useEffect, useState } from 'react';
 import {
   Box,
@@ -50,7 +57,7 @@ function PayeeParties() {
         {
           method: 'GET',
           headers: { 'Content-Type': 'application/json' },
-        }
+        },
       );
 
       const ress = await response?.json();
@@ -84,7 +91,7 @@ function PayeeParties() {
     (p) =>
       p.displayName.toLowerCase().includes(searchTerm.toLowerCase()) ||
       p.idValue.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      p.accountType.toLowerCase().includes(searchTerm.toLowerCase())
+      p.accountType.toLowerCase().includes(searchTerm.toLowerCase()),
   );
 
   // Pagination handlers
@@ -134,7 +141,7 @@ function PayeeParties() {
             'Content-Type': 'application/json',
           },
           body: JSON.stringify(newParty),
-        }
+        },
       );
 
       if (response.ok) {
@@ -260,7 +267,7 @@ function PayeeParties() {
                       '&:hover': {
                         backgroundColor: alpha(
                           theme.palette.primary.main,
-                          0.04
+                          0.04,
                         ),
                       },
                       transition: 'background 0.2s ease',

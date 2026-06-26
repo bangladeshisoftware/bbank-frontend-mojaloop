@@ -1,3 +1,10 @@
+/**************************************************************************
+ * Copyright © 2026 Bangladeshi Software Ltd. All rights reserved.
+ * Distributed under the license terms specified in this repository.
+ *
+ * ORIGINAL AUTHOR: Muhammad Nasim (Developer)
+ **************************************************************************/
+
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 import DashboardLayout from './layouts/DashboardLayout';
 import { useAuth } from './context/AuthContext';

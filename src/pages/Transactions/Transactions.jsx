@@ -1,3 +1,10 @@
+/**************************************************************************
+ * Copyright © 2026 Bangladeshi Software Ltd. All rights reserved.
+ * Distributed under the license terms specified in this repository.
+ *
+ * ORIGINAL AUTHOR: Muhammad Nasim (Developer)
+ **************************************************************************/
+
 import React, { useEffect, useState, useCallback } from 'react';
 import {
   Box,
@@ -455,7 +462,7 @@ function Transactions() {
     direction || txType || status || merchantId || dateFrom || dateTo;
 
   // Summary cards to show (P2P, NPSB, RTGS, BEFTN)
-  const CARD_TYPES = ['P2P', 'INSTANT', 'NPSB', 'RTGS', 'BEFTN',];
+  const CARD_TYPES = ['P2P', 'INSTANT', 'NPSB', 'RTGS', 'BEFTN'];
 
   return (
     <Box sx={{ p: { xs: 2, md: 3 } }}>

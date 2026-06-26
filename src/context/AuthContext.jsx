@@ -1,3 +1,10 @@
+/**************************************************************************
+ * Copyright © 2026 Bangladeshi Software Ltd. All rights reserved.
+ * Distributed under the license terms specified in this repository.
+ *
+ * ORIGINAL AUTHOR: Muhammad Nasim (Developer)
+ **************************************************************************/
+
 import axios from 'axios';
 import {
   createContext,
@@ -64,7 +71,9 @@ export function AuthProvider({ children }) {
   const isMerchant = user?.role === 'MERCHANT';
 
   return (
-    <Ctx.Provider value={{ user, profile, getProfile, login, logout, isAdmin, isMerchant }}>
+    <Ctx.Provider
+      value={{ user, profile, getProfile, login, logout, isAdmin, isMerchant }}
+    >
       {children}
     </Ctx.Provider>
   );

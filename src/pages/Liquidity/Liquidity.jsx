@@ -1,3 +1,10 @@
+/**************************************************************************
+ * Copyright © 2026 Bangladeshi Software Ltd. All rights reserved.
+ * Distributed under the license terms specified in this repository.
+ *
+ * ORIGINAL AUTHOR: Muhammad Nasim (Developer)
+ **************************************************************************/
+
 import { useState, useEffect, useCallback } from 'react';
 import {
   Box,
@@ -139,7 +146,7 @@ function LimitBar({ label, used, total, pct, color }) {
       </div>
       <div className='w-full'>
         <Typography fontSize={12} color='text.secondary'>
-         <b> Used:</b> <b className='text-orange-500'>৳{fmtN(used)}</b>
+          <b> Used:</b> <b className='text-orange-500'>৳{fmtN(used)}</b>
         </Typography>
         <Typography fontSize={12} color='text.secondary'>
           <b>Limit:</b> <b style={{ color }}>৳{fmtN(total)}</b>

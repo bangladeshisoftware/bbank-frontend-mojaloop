@@ -1,3 +1,10 @@
+/**************************************************************************
+ * Copyright © 2026 Bangladeshi Software Ltd. All rights reserved.
+ * Distributed under the license terms specified in this repository.
+ *
+ * ORIGINAL AUTHOR: Muhammad Nasim (Developer)
+ **************************************************************************/
+
 import { useState, useEffect, useCallback } from 'react';
 import {
   Box,
@@ -717,7 +724,7 @@ export default function Users() {
           </Button>
         </Box>
       </Box>
-     
+
       <Paper
         elevation={0}
         component='form'

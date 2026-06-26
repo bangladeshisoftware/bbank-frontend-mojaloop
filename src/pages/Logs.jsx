@@ -1,3 +1,10 @@
+/**************************************************************************
+ * Copyright © 2026 Bangladeshi Software Ltd. All rights reserved.
+ * Distributed under the license terms specified in this repository.
+ *
+ * ORIGINAL AUTHOR: Muhammad Nasim (Developer)
+ **************************************************************************/
+
 import React, { useState } from 'react';
 import { useSocket } from '../context/SocketContext';
 import { PiCloudCheckFill } from 'react-icons/pi';

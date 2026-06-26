@@ -1,3 +1,10 @@
+/**************************************************************************
+ * Copyright © 2026 Bangladeshi Software Ltd. All rights reserved.
+ * Distributed under the license terms specified in this repository.
+ *
+ * ORIGINAL AUTHOR: Muhammad Nasim (Developer)
+ **************************************************************************/
+
 import React, { useState, useEffect, useRef } from 'react';
 import { Paper, Typography, Button, CircularProgress } from '@mui/material';
 import { useNavigate, useParams } from 'react-router-dom';

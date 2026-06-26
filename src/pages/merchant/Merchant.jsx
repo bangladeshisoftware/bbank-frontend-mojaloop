@@ -1,3 +1,10 @@
+/**************************************************************************
+ * Copyright © 2026 Bangladeshi Software Ltd. All rights reserved.
+ * Distributed under the license terms specified in this repository.
+ *
+ * ORIGINAL AUTHOR: Muhammad Nasim (Developer)
+ **************************************************************************/
+
 import React, { useEffect, useState, useCallback, useRef } from 'react';
 import {
   Box,
@@ -924,23 +931,6 @@ function Merchant() {
               <RefreshIcon fontSize='small' />
             </IconButton>
           </Tooltip>
-
-          {/* <Button
-            variant='outlined'
-            startIcon={<PiFileCsvFill />}
-            onClick={() => setCsvOpen(true)}
-            sx={{
-              textTransform: 'none',
-              borderColor: alpha('#05569f', 0.4),
-              color: '#05569f',
-              '&:hover': {
-                borderColor: '#05569f',
-                bgcolor: alpha('#05569f', 0.04),
-              },
-            }}
-          >
-            Upload CSV
-          </Button>  */}
 
           <Button
             variant='contained'

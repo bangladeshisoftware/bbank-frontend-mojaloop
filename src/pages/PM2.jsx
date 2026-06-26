@@ -1,3 +1,10 @@
+/**************************************************************************
+ * Copyright © 2026 Bangladeshi Software Ltd. All rights reserved.
+ * Distributed under the license terms specified in this repository.
+ *
+ * ORIGINAL AUTHOR: Muhammad Nasim (Developer)
+ **************************************************************************/
+
 import { Button } from '@mui/material';
 import React, { useEffect, useState } from 'react';
 import { FaMoneyBillTransfer } from 'react-icons/fa6';

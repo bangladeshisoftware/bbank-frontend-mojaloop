@@ -1,3 +1,10 @@
+/**************************************************************************
+ * Copyright © 2026 Bangladeshi Software Ltd. All rights reserved.
+ * Distributed under the license terms specified in this repository.
+ *
+ * ORIGINAL AUTHOR: Muhammad Nasim (Developer)
+ **************************************************************************/
+
 import { useState, useEffect, useCallback } from 'react';
 import {
   Box,
@@ -429,10 +436,7 @@ export default function ActivityLogs() {
                         {log.username?.charAt(0)?.toUpperCase()}
                       </Avatar>
                       <Box>
-                        <Typography
-                          fontSize={13}
-                          fontWeight={600}
-                        >
+                        <Typography fontSize={13} fontWeight={600}>
                           {log.username}
                         </Typography>
                         <Typography fontSize={10} color='text.secondary'>
