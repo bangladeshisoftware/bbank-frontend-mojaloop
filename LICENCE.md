@@ -38,7 +38,7 @@ language governing permissions and limitations under the License.
 
 This project implements the **B Bank Portal** — the web-based user interface for
 B Bank, providing core transfer features for interbank payments between B Bank and
-A Bank through the Mojaloop Switch.
+A Bank through the Mojaloop NB Switch.
 
 **Key Features:**
 - Interbank Transfer Initiation (B Bank → A Bank)
@@ -56,7 +56,7 @@ B Bank Portal (this project)
       ↓
 B Bank Server
       ↓
-Mojaloop Switch
+Mojaloop NB Switch
       ↓
 A Bank
 ```
